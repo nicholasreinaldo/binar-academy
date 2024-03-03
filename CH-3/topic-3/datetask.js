@@ -14,8 +14,14 @@
 // Tulislah kode untuk melihat hari dan tanggal lahir seseorang hanya dengan memasukkan umur
 
 const today = new Date();
+const options = {
+  weekday: "long",
+  year: "numeric",
+  month: "long",
+  day: "numeric",
+}  
 let age = 26;
 let birthDate = new Date(today.getFullYear() - age, today.getMonth(), today.getDate())
-let formattedBirthdate = birthDate.toLocaleDateString('en-US');
+let formattedBirthdate = birthDate.toLocaleDateString('id-id', options);
 
-console.log(`Tanggal Lahirmu: ${formattedBirthdate}`)
+console.log(`Tanggal Lahirmu adalah ${formattedBirthdate}`)
