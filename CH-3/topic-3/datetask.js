@@ -16,6 +16,6 @@
 const today = new Date();
 let age = 26;
 let birthDate = new Date(today.getFullYear() - age, today.getMonth(), today.getDate())
-let formattedBirthdate = birthdate.toLocaleDateString('en-US', options);
+let formattedBirthdate = birthDate.toLocaleDateString('en-US');
 
-console.log(`Tanggal Lahirmu: ${birthDate}`)
+console.log(`Tanggal Lahirmu: ${formattedBirthdate}`)
