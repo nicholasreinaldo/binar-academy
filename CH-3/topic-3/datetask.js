@@ -21,6 +21,7 @@ const options = {
   day: "numeric",
 }  
 let age = 26;
+
 let birthDate = new Date(today.getFullYear() - age, today.getMonth(), today.getDate())
 let formattedBirthdate = birthDate.toLocaleDateString('id-id', options);
 
