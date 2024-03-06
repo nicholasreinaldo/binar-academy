@@ -19,10 +19,10 @@ const options = {
   year: "numeric",
   month: "long",
   day: "numeric",
-}  
-let age = 26;
+};  
 
-let birthDate = new Date(today.getFullYear() - age, today.getMonth(), today.getDate())
-let formattedBirthdate = birthDate.toLocaleDateString('id-id', options);
+const age = 26;
+const birthDate = new Date(today.getFullYear() - age, today.getMonth(), today.getDate());
+const formattedBirthdate = birthDate.toLocaleDateString('id-id', options);
 
-console.log(`Tanggal Lahirmu adalah ${formattedBirthdate}`)
+console.log(`Tanggal Lahirmu adalah ${formattedBirthdate}`);
