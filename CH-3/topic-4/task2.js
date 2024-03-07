@@ -8,3 +8,12 @@ function calculateBmi(weight,height) {
     console.log((bmi).toFixed(1));
   }
   calculateBmi(69,171)
+
+
+  // Arrow function version
+
+const calculateBmi = (weight,height) => {
+  let bmi = weight/((height/100)**2);
+  console.log((bmi).toFixed(1));
+}
+calculateBmi(69,171)

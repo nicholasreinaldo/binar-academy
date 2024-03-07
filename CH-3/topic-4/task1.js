@@ -17,4 +17,11 @@ function show() {
 
 console.log()
 
-// Answer 2
+// Arrow function version
+
+const show = () => {
+  const today = new Date().toLocaleDateString('id-id', options);
+  return today;
+}
+
+console.log(show())

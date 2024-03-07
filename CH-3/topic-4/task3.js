@@ -13,3 +13,11 @@ function acronym(name) {
 }
 
 console.log(acronym("Harry"))
+
+// Arrow function version
+
+const acronym = name => {
+  return name[0];
+}
+
+console.log(acronym("Harry"))
