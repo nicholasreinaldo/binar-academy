@@ -3,7 +3,7 @@ console.log("hello");
 } */
 
 
-//Standard anonymous function
+// Standard anonymous function
 
 const hello = (function() {console.log("hello");});
 
