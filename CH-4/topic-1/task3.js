@@ -1,23 +1,10 @@
-// // Example 1
-// Input:
-// First Name: John
-// Last Name: Doe
+// https://small-ear-9a7.notion.site/Comparison-and-Logical-Condition-e9326217f5464a72b3ab205b4ceaa1ef
 
-// Output:
-// Hello, John Doe!
-
-// // Example 2
-// Input:
-// First Name: Alice
-
-// Output:
-// Hello, Alice!
-
-const firstName = "John";
+const firstName = "Tron";
 const lastName = "";
 
 const test = !lastName
     ? `Hello, ${firstName}!`
-    : `Hello, ${firstName} ${lastName}!`;
+    : `${firstName ? `Hello, ${firstName} ` : 'Hello, '}${lastName}!`;
 
 console.log(test);
