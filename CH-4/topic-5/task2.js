@@ -2,8 +2,6 @@ let bandInfo;
 
 // Put your code here
 
-let job = "musician";
-
 bandInfo = {
   name: "The Beatles",
   nationality: "english",
@@ -24,7 +22,6 @@ bandInfo = {
     console.log(`${job} is a ${this.nationality} ${this.members} piece ${this.genre} band formed in ${this.formedYear}. 
     Their first album is '${this.albums[0].name}' released in ${this.albums[0].released}`)
   },
-  job: "guitarist"
 }
 
 bandInfo.introduction()
