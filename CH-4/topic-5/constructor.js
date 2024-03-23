@@ -5,3 +5,4 @@ function Person (name, age) {
 
 const nicho = new Person("Nicholas",26);
 console.log(nicho);
+
