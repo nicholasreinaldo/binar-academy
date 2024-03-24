@@ -64,7 +64,7 @@ async function processProducts(productIds) {
     console.log("Updated product list with discounts applied:", productList);
 }
 
-const searchProduct = ["P001", "P002", "P003","P004"];
+const searchProduct = ["P001", "P002", "P003","P004","P005"];
   
 processProducts(searchProduct)
   
