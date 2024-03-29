@@ -39,16 +39,19 @@ function selectItem() {
     });
 }
 
+let totalAmount = 0; 
+
 function insertMoney(selectedItem) {
     rl.question('Please insert 10,000, 20,000, or 50,000 rupiah: ', (amount) => {
         const parsedAmount = parseInt(amount); 
-        if (isNaN(parsedAmount) || parsedAmount <= 0) {
+        const validBills = [10000, 20000, 50000];
+        if (isNaN(parsedAmount) || !validBills.includes(parsedAmount)) {
             console.log('Please only insert 10,000, 20,000, or 50,000 rupiah.');
             insertMoney(selectedItem);
         } else {
-            selectedItem.totalAmount = (selectedItem.totalAmount || 0) + parsedAmount;
-            console.log(`Total amount inserted: Rp. ${selectedItem.totalAmount}`);
-            if (selectedItem.totalAmount >= selectedItem.price) {
+            totalAmount += parsedAmount;
+            console.log(`Total amount inserted: Rp. ${totalAmount}`);
+            if (totalAmount >= selectedItem.price) {
                 console.log(`You have bought ${selectedItem.name}. Enjoy!`);
                 selectedItem.quantity--;
             } else {
