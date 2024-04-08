@@ -11,8 +11,6 @@
 // Use appropriate data structures to store tasks (e.g., arrays, objects).
 // Export the Task Manager module so it can be used in other Node.js files.
 
-// taskManager.js
-
 const TaskManager = (function() {
   let tasks = [];
   let currentId = 1;
@@ -23,25 +21,36 @@ const TaskManager = (function() {
     this.description = description;
     this.completed = false;
   }
+
   function addTask(title, description) {
     const task = new Task(title, description);
     tasks.push(task);
     console.log(`Adding Task number ${task.id}`)
   }
+
   function getTasks() {
     console.log('=========== Task List ==========');    
     return tasks;
   }
+
   function completeTask(taskId) {
     const task = tasks.find(task => task.id === taskId);
     if (task) {
       task.completed = true;
-      console.log(`Task #${taskId} have been marked completed`);
+      console.log(`Task #${taskId} has been marked completed`);
+    } else {
+      console.error(`Error: Task #${taskId} not found`);
     }
   }
+  
   function removeTask(taskId) {
-    tasks = tasks.filter(task => task.id !== taskId);
-    console.log(`Task #${taskId} have been removed`);
+    const task = tasks.find(task => task.id === taskId);
+    if (task) {
+      tasks = tasks.filter(task => task.id !== taskId); // Filter tasksnya yang tidak sama dengan taskId **Apakah ada perbedaan performa menggunakan splice selain harus cari indexnya? 
+      console.log(`Task #${taskId} has been removed`);
+    } else {
+      console.error(`Error: Task #${taskId} not found`);
+    }
   }
 
   return {

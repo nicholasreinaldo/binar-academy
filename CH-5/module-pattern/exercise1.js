@@ -25,9 +25,12 @@ console.log('Task List:', tasks);
 
 // Complete a Task
 TaskManager.completeTask(1);
+TaskManager.completeTask(5);
 
 // Remove a Task
 TaskManager.removeTask(2);
+TaskManager.removeTask(4);
+
 
 // Get Task Lists again to test
 tasks = TaskManager.getTasks();
