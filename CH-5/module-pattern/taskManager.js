@@ -11,9 +11,13 @@
 // Use appropriate data structures to store tasks (e.g., arrays, objects).
 // Export the Task Manager module so it can be used in other Node.js files.
 
+// taskManager.js
+const User = require('./user');
+
 const TaskManager = (function() {
   let tasks = [];
   let currentId = 1;
+  let observers = [];
 
   function Task(title, description) {
     this.id = currentId++;
@@ -22,14 +26,29 @@ const TaskManager = (function() {
     this.completed = false;
   }
 
+  function addObserver(observer) {
+    observers.push(observer);
+  }
+
+  function removeObserver(observer) {
+    observers = observers.filter(obs => obs !== observer);
+  }
+
+  function notifyObservers(changeType, taskId) {
+    observers.forEach(observer => {
+      observer.update(changeType, taskId);
+    });
+  }
+
   function addTask(title, description) {
     const task = new Task(title, description);
     tasks.push(task);
-    console.log(`Adding Task number ${task.id}`)
+    console.log(`Adding Task number ${task.id}`);
+    notifyObservers('added', task.id);
   }
 
   function getTasks() {
-    console.log('=========== Task List ==========');    
+    console.log('=========== Task List ==========');
     return tasks;
   }
 
@@ -38,26 +57,30 @@ const TaskManager = (function() {
     if (task) {
       task.completed = true;
       console.log(`Task #${taskId} has been marked completed`);
+      notifyObservers('completed', taskId);
     } else {
       console.error(`Error: Task #${taskId} not found`);
     }
   }
-  
+
   function removeTask(taskId) {
     const task = tasks.find(task => task.id === taskId);
     if (task) {
-      tasks = tasks.filter(task => task.id !== taskId); // Filter tasksnya yang tidak sama dengan taskId **Apakah ada perbedaan performa menggunakan splice selain harus cari indexnya? 
+      tasks = tasks.filter(task => task.id !== taskId);
       console.log(`Task #${taskId} has been removed`);
+      notifyObservers('removed', taskId);
     } else {
       console.error(`Error: Task #${taskId} not found`);
     }
   }
 
   return {
-    addTask: addTask,
-    getTasks: getTasks,
-    completeTask: completeTask,
-    removeTask: removeTask
+    addObserver,
+    removeObserver,
+    addTask,
+    getTasks,
+    completeTask,
+    removeTask
   };
 })();
 
