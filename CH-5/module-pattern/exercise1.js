@@ -13,13 +13,30 @@
 
 const TaskManager = require('./taskManager');
 
+// Testing scenarios:
+// Add 3 Tasks
 TaskManager.addTask('Task 1', 'Description for Task 1');
 TaskManager.addTask('Task 2', 'Description for Task 2');
 TaskManager.addTask('Task 3', 'Description for Task 3');
 
-const tasks = TaskManager.getTasks();
+// Get Task List
+let tasks = TaskManager.getTasks();
 console.log('Task List:', tasks);
 
+// Complete a Task
 TaskManager.completeTask(1);
 
+// Remove a Task
 TaskManager.removeTask(2);
+
+// Get Task Lists again to test
+tasks = TaskManager.getTasks();
+console.log('Task List:', tasks);
+
+// Add 1 Tasks to test for the last time;
+
+TaskManager.addTask('Task 4', 'Description for Task 4');
+
+// Get Task Lists again for the last time;
+tasks = TaskManager.getTasks();
+console.log('Task List:', tasks);
