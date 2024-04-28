@@ -6,6 +6,7 @@ const port = 3000;
 let animals = generateAnimals();
 
 app.get("/animals", (req,res) => res.json(animals));
+app.get("/animals/:id")
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
