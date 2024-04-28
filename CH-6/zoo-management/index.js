@@ -7,7 +7,7 @@ let animals = generateAnimals();
 
 app.get("/animals", (req,res) => res.json(animals));
 app.get("/animals/:name", (req,res) => {
-    const id = req.params.name;
+    const id = Number(req.params.id);
     let result = {};
     for (let animal of animals) {
         if (animal.id === id) {
