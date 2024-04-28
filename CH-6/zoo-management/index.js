@@ -5,6 +5,7 @@ const Animal = require("./models/animal")
 const port = 3000;
 
 let animals = generateAnimals();
+app.use(express.json());
 
 app.get("/animals", (req,res) => res.json(animals));
 app.get("/animals/:id", (req,res) => {
