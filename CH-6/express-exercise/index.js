@@ -20,7 +20,10 @@ app.get('ini-error', (req, res) => inierror)
 
 app.get('/', (req, res) => res.send('<h1>Test<h1>'))
 
-app.get('/binar', (req, res) => res.send('Hello world'))
+app.use(function (err, req, res, next) {
+  console.log(err)
+  res.status(500).json({ status: 'fail', errors: err.message })
+})
 
 app.listen(port, () =>
   console.log(`Server is running at http://localhost:${port}`),
