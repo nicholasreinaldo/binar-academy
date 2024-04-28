@@ -32,7 +32,17 @@ app.post("/animals", (req,res) => {
 
 app.put("/animals/id", (req,res) => {
     const { name, species, classification} = req.body;
-    const id = req.params;
+    const animalId = req.params;
+    const animal = animals.find((animal) => animal.id === animalId);
+    if (!animal) {
+        return res.status(404).json({ error: "Animal not found"});
+    }
+    animal.name = name;
+    animal.species = species;
+    animal.classification = classification;
+
+    animals.push(animal);
+    res.json(animal);
 })
 
 app.listen(port, () => {
