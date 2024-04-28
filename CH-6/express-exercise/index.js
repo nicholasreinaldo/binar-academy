@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const productRoute = require('./router/product.route')
 
 const logger = (req, res, next) => {
   console.log(`${req.method} ${req.url}`)
@@ -8,6 +9,7 @@ const logger = (req, res, next) => {
 }
 
 app.use(logger)
+app.use(productRoute)
 
 const serviceHandler = (req, res) =>
   res.json([{ name: 'Tukang komputer' }, { name: 'Ojol' }])
@@ -15,19 +17,6 @@ const serviceHandler = (req, res) =>
 app.get('/', (req, res) => res.send('<h1>Test<h1>'))
 
 app.get('/binar', (req, res) => res.send('Hello world'))
-
-app.get('/products', (req, res) =>
-  res.json([
-    {
-      name: 'Iphone',
-      qty: 10,
-    },
-    {
-      name: 'samsung',
-      qty: 3,
-    },
-  ]),
-)
 
 app.get('/services', serviceHandler)
 
