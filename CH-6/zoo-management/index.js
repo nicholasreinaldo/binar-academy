@@ -45,6 +45,19 @@ app.put("/animals/:id", (req,res) => {
     res.json(animal);
 })
 
+app.delete("/animals/:id", (req, res) => {
+    const animalId = parseInt(req.params.id);
+    const index = animals.findIndex(animal => animal.id === animalId);
+
+    if (index === -1) {
+        return res.status(404).json({ error: "Animal not found" });
+    }
+
+    animals.splice(index, 1);
+    res.json({ message: "Animal deleted successfully" });
+});
+
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
 })
