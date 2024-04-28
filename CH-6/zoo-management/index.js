@@ -16,6 +16,7 @@ app.get("/animals/:id", (req,res) => {
     res.json(result);
 });
 
+
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
 })
