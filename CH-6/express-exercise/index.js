@@ -20,10 +20,9 @@ app.get('/products', (req, res) =>
   ]),
 )
 
-app.get('/services', (req, res) => [
-  { name: 'Tukang komputer' },
-  { name: 'Ojol' },
-])
+app.get('/services', (req, res) =>
+  res.json([{ name: 'Tukang komputer' }, { name: 'Ojol' }]),
+)
 
 app.listen(port, () =>
   console.log(`Server is running at http://localhost:${port}`),
