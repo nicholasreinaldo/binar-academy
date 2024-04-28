@@ -1,6 +1,6 @@
 const express = require("express");
 const app = express();
-const generateAnimals = require("./utils/seed")
+const generateAnimals = require("./utils/seed");
 const port = 3000;
 
 let animals = generateAnimals();
