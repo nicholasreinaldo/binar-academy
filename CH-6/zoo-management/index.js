@@ -42,7 +42,6 @@ app.put("/animals/:id", (req,res) => {
     animal.species = species;
     animal.classification = classification;
 
-    animals.push(animal);
     res.json(animal);
 })
 
