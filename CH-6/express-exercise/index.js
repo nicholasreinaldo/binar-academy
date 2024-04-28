@@ -25,6 +25,10 @@ app.use(function (err, req, res, next) {
   res.status(500).json({ status: 'fail', errors: err.message })
 })
 
+app.use(function (req, res, next) {
+  res.status(404).json({ status: 'fail', errors: 'Not found' })
+})
+
 app.listen(port, () =>
   console.log(`Server is running at http://localhost:${port}`),
 )
