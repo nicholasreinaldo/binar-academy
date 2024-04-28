@@ -30,10 +30,11 @@ app.post("/animals", (req,res) => {
     res.status(201).json(animal);
 })
 
-app.put("/animals/id", (req,res) => {
+app.put("/animals/:id", (req,res) => {
     const { name, species, classification} = req.body;
-    const animalId = req.params;
+    const animalId = parseInt(req.params.id);
     const animal = animals.find((animal) => animal.id === animalId);
+
     if (!animal) {
         return res.status(404).json({ error: "Animal not found"});
     }
