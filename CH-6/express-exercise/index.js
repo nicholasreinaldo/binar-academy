@@ -1,3 +1,4 @@
+// initialisasi express
 const express = require('express')
 const app = express()
 const morgan = require('morgan')
@@ -7,14 +8,10 @@ const servicesRoute = require('./routes/services.route')
 const notFoundMiddleware = require('./middlewares/notFound.middleware')
 const serverErrorMiddleware = require('./middlewares/notFound.middleware')
 
-const logger = (req, res, next) => {
-  console.log(`${req.method} ${req.url}`)
-  next()
-}
-
+// middleware
 app.use(morgan('dev'))
 
-// app.use(logger)
+// route
 app.use(productRoute)
 app.use(servicesRoute)
 
