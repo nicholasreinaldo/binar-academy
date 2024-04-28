@@ -6,8 +6,8 @@ const port = 3000;
 let animals = generateAnimals();
 
 app.get("/animals", (req,res) => res.json(animals));
-app.get("/animals/:id", (req,res) => {
-    const id = req.params.id;
+app.get("/animals/:name", (req,res) => {
+    const id = req.params.name;
     console.log(id);
 });
 
