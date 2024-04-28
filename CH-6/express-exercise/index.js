@@ -1,8 +1,8 @@
 const express = require('express')
 const app = express()
 const port = 3000
-const productRoute = require('./router/product.route')
-const servicesRoute = require('./router/services.route')
+const productRoute = require('./routes/product.route')
+const servicesRoute = require('./routes/services.route')
 
 const logger = (req, res, next) => {
   console.log(`${req.method} ${req.url}`)
