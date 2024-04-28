@@ -3,7 +3,7 @@ const app = express()
 const port = 3000
 
 // Buat sebuah http method get
-app.get('/', (req, res) => res.send('Test'))
+app.get('/', (req, res) => res.send('<h1>Test<h1>'))
 
 app.get('/binar', (req, res) => res.send('Hello world'))
 
