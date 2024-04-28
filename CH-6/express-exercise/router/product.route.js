@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Router()
 
-app.get('/products', (req, res) =>
+router.get('/products', (req, res) =>
   res.json([
     {
       name: 'Iphone',
@@ -13,3 +13,5 @@ app.get('/products', (req, res) =>
     },
   ]),
 )
+
+module.exports = router
