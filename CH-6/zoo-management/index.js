@@ -20,6 +20,8 @@ app.get("/animals/:id", (req,res) => {
 
 app.post("/animals", (req,res) => {
     const { name, species, classification} = req.body;
+
+    // Kondisi pengecekan sesuai dengan kriteria apakah lengkap atau tidak
     if(!name || !species || !classification) {
         return res.status(400).json({error: "missing required fileds"})
     }
@@ -27,6 +29,8 @@ app.post("/animals", (req,res) => {
     animals.push(animal)
     res.status(201).json(animal);
 })
+
+app.put("/animals", (req,res) => {})
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
