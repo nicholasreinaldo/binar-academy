@@ -30,7 +30,10 @@ app.post("/animals", (req,res) => {
     res.status(201).json(animal);
 })
 
-app.put("/animals", (req,res) => {})
+app.put("/animals/id", (req,res) => {
+    const { name, species, classification} = req.body;
+    const id = req.params;
+})
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`)
