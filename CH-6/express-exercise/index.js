@@ -29,6 +29,8 @@ app.use(function (req, res, next) {
   res.status(404).json({ status: 'fail', errors: 'Not found' })
 })
 
+// Sebaiknya error handling 404 ini selalu diimplement, sebaiknya taruh di paling akhir
+
 app.listen(port, () =>
   console.log(`Server is running at http://localhost:${port}`),
 )
