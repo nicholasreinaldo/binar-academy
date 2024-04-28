@@ -7,13 +7,11 @@ let animals = generateAnimals();
 
 app.get("/animals", (req,res) => res.json(animals));
 app.get("/animals/:id", (req,res) => {
-    const id = Number(req.params.id);
-    let result = {};
-    for (let animal of animals) {
-        if (animal.id === id) {
-            result = animal;
-            break;
-        }
+    const animalId = parseInt(req.params.id);
+    const animal = animals.find((animal) => animal.id === animalId);
+
+    if (!animal) {
+        return res.status(404).json({ error: "Animal not found"});
     }
     res.json(result);
 });
