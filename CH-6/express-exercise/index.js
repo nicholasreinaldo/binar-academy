@@ -16,7 +16,7 @@ app.use(productRoute)
 app.use(servicesRoute)
 
 app.get('/', (req, res) => res.send('<h1>Test<h1>'))
-app.get('/binar', (req,res) => res.json({}))
+app.get('/binar', (req,res) => res.json({message: "Hello binarian"}))
 app.get('/ini-error', (req, res) => inierror)
 
 
