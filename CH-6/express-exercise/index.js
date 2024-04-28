@@ -4,4 +4,4 @@ const port = 3000;
 
 // Buat sebuah http method get
 app.get('/', (req,res) => res.send("Test"));
-app.listen(port,() => console.log(`Server is running at http://localhost:${port}`))
+app.listen(port,() => console.log(`Server is running at http://localhost:${port}`));
