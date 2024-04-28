@@ -16,6 +16,8 @@ app.use(morgan('dev'))
 app.use(productRoute)
 app.use(servicesRoute)
 
+app.get('ini-error', (req, res) => inierror)
+
 app.get('/', (req, res) => res.send('<h1>Test<h1>'))
 
 app.get('/binar', (req, res) => res.send('Hello world'))
