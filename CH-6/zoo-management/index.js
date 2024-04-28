@@ -8,7 +8,14 @@ let animals = generateAnimals();
 app.get("/animals", (req,res) => res.json(animals));
 app.get("/animals/:name", (req,res) => {
     const id = req.params.name;
-    console.log(id);
+    let result = {};
+    for (let animal of animals) {
+        if (animal.id === id) {
+            result = animal;
+            break;
+        }
+    }
+    res.json(result);
 });
 
 app.listen(port, () => {
