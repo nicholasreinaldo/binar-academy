@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 8080
-const product = require('./db/products.json')
+const products = require('./db/products.json')
 
 let balance = 100000000
 let cart = {}
