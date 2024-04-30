@@ -47,13 +47,13 @@ app.put('/animals/:id', (req, res) => {
 
 app.delete('/animals/:id', (req, res) => {
   const animalId = parseInt(req.params.id)
-  const index = animals.findIndex((animal) => animal.id === animalId)
+  const animal = animals.findIndex((animal) => animal.id === animalId)
 
-  if (!index) {
+  if (!animal) {
     return res.status(404).json({ error: 'Animal not found' })
   }
 
-  animals.splice(index, 1)
+  animals.splice(animal, 1)
   res.json({ message: 'Animal deleted successfully' })
 })
 
