@@ -1,0 +1,12 @@
+<link href="/style.css" rel="stylesheet" type="text/css" />
+<h1 class="title">Welcome to Bingleshop</h1>
+<h4>Please buy anything you want</h4>
+
+<p>Berikut adalah list product:</p>
+<table>
+  <% for(let product of products) { %>
+  <tr>
+    <td><%= product.name %></td>
+  </tr>
+  <% } %>
+</table>
