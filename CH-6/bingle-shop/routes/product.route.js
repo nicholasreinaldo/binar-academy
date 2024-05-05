@@ -27,6 +27,10 @@ app.get('/api/cart', (req, res) => {
       total: (product.price = quantity),
     }
   }
+  return res.json({
+    message: 'Product berhasil ditambahkan ke cart',
+    data: OBject.values(cart),
+  })
 })
 
 module.export = router
