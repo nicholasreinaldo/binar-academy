@@ -5,7 +5,7 @@ let balance = 100000000
 let cart = {}
 
 router.post('/api/cart', (req, res) => {
-  const { productId, quantity } = req.body
+  const { productId, quantity } = req.body // destructure sebuah object productId dan quantity untuk mengambil data dari product ke keranjangnya.
   const product = products.find((p) => p.id === productId)
   if (!product) {
     return res.status(404).json({ message: 'Product tidak terdaftar' })
