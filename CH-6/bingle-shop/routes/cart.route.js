@@ -5,14 +5,16 @@ let balance = 100000000
 let cart = {}
 
 router.post('/api/cart', (req, res) => {
+  // Ini adalah API Post untuk nambah product ke cart
   const { productId, quantity } = req.body // destructure sebuah object productId dan quantity untuk mengambil data dari product ke keranjangnya.
-  const product = products.find((p) => p.id === productId)
+  const product = products.find((p) => p.id === +productId)
   if (!product) {
     return res.status(404).json({ message: 'Product tidak terdaftar' })
   }
   if (quantity > product.stock) {
     return res.status(400).json({ message: 'Stock tidak mencukupi' })
   }
+  // Jika productnya sudah ada di keranjang atau belum
   if (cart[productId]) {
     if (cart[productId].quantity + quantity > product.stock) {
       return res.status(400).json({ message: 'Stock tidak mencukupi' })
