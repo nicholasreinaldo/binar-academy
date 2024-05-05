@@ -5,10 +5,8 @@ const products = require('./db/products.json')
 const cartRoutes = require('./routes/cart.route')
 
 app.use(cartRoutes)
-
-const productsString = JSON.stringify(products)
-
 app.use(express.static(__dirname + '/public'))
+app.use(express.json())
 app.set('view engine', 'ejs')
 app.get('/api/products', (req, res) => res.json(products))
 
