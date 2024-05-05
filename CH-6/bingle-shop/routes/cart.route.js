@@ -31,10 +31,11 @@ router.post('/api/cart', (req, res) => {
       total: (product.price = quantity),
     }
   }
-  return res.json({
-    message: 'Product berhasil ditambahkan ke cart',
-    data: Object.values(cart),
-  })
+  // return res.json({
+  //   message: 'Product berhasil ditambahkan ke cart',
+  //   data: Object.values(cart),
+  // })
+  res.redirect('/cart')
 })
 
 router.get('/cart', (req, res) => {
