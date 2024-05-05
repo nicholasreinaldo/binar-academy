@@ -2,23 +2,9 @@ const express = require('express')
 const app = express()
 const port = 8080
 const products = require('./db/products.json')
+const cartRoutes = require('./routes/cart.route')
 
-let balance = 100000000
-let cart = {}
-
-router.post('/api/cart', (req, res) => {
-  const { productId, quantity } = req.body
-  const product = products.find((p) => p.id === productId)
-  if (!product) {
-    return res.status(404).json({ message: 'Product tidak terdaftar' })
-  }
-
-  if (quantity > product.stock) {
-    return res.status(400).json({ message: 'Stock tidak mencukupi' })
-  }
-})
-
-router.get
+app.use(cartRoutes)
 
 const productsString = JSON.stringify(products)
 
