@@ -1,10 +1,9 @@
 const express = require('express')
-const router = express.Route()
+const router = express.Router()
 let balance = 100000000
 let cart = {}
 
-router.get('/api/cart', (req, res) => {
-  console.log(req.body)
+router.post('/api/cart', (req, res) => {
   const { productId, quantity } = req.body
   const product = products.find((p) => p.id === productId)
   if (!product) {
