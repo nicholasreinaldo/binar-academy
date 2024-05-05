@@ -7,7 +7,7 @@ let cart = {}
 router.post('/api/cart', (req, res) => {
   // Ini adalah API Post untuk nambah product ke cart
   const { productId, quantity } = req.body // destructure sebuah object productId dan quantity untuk mengambil data dari product ke keranjangnya.
-  const product = products.find((p) => p.id === +productId)
+  const product = products.find((p) => p.id == productId)
   if (!product) {
     return res.status(404).json({ message: 'Product tidak terdaftar' })
   }
@@ -37,6 +37,16 @@ router.post('/api/cart', (req, res) => {
   })
 })
 
-router.get('/api/cart', (req, res) => res.json(cart))
+router.get('/api/cart', (req, res) => {
+  let carts = Object.values(cart)
+  res.render('cart', { carts })
+})
+
+router.delete('/api/cart', (req, res) => {
+  cart = {}
+  return res.json({
+    message: 'Cart berhasil di kosongkan',
+  })
+})
 
 module.exports = router
