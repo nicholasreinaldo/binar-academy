@@ -37,7 +37,7 @@ router.post('/api/cart', (req, res) => {
   })
 })
 
-router.get('/api/cart', (req, res) => {
+router.get('/cart', (req, res) => {
   let carts = Object.values(cart)
   res.render('cart', { carts })
 })
