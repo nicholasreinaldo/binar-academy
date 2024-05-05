@@ -3,14 +3,14 @@
 <h4>Please buy anything you want</h4>
 
 <p>Berikut adalah list product:</p>
-<table>
+<div class="card-container">
   <% for(let product of products) { %>
   <div class="card">
-    <img src="https://pbs.twimg.com/media/FnXVKoiX0AIlG7Y.png" alt="Avatar" style="">
+    <img src="https://pbs.twimg.com/media/FnXVKoiX0AIlG7Y.png" alt="Avatar" />
     <div class="container">
-        <h4><b> <%= product.name %></b></h4>
-        <p><%= product.price %></p>
+      <h4><b> <%= product.name %></b></h4>
+      <p><%= product.price %></p>
     </div>
-
-  <% } %>
-</table>
+    <% } %>
+  </div>
+</div>
