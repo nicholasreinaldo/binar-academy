@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router()
+const products = require('../db/products.json')
 let balance = 100000000
 let cart = {}
 
