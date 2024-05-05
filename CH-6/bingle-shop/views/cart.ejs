@@ -4,9 +4,10 @@
 <div class="card_carts">
   <% for(let cart of carts) { %>
   <div>
-    <h4><b> <%= carts.name %></b></h4>
-    <p><%= carts.price %></p>
-    <p><%= carts.brand %></p>
-    <p><%= carts.description %></p>
+    <h4><b> <%= cart.name %></b></h4>
+    <p><%= cart.price %></p>
+    <p><%= cart.brand %></p>
+    <p><%= cart.description %></p>
   </div>
+  <% } %>
 </div>
