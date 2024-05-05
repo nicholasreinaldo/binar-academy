@@ -1,7 +1,7 @@
 const express = require('express')
 const router = express.Route()
 
-app.get('/api/cart', (req, res) => {
+router.get('/api/cart', (req, res) => {
   console.log(req.body)
   const { productId, quantity } = req.body
   const product = products.find((p) => p.id === productId)
@@ -29,8 +29,10 @@ app.get('/api/cart', (req, res) => {
   }
   return res.json({
     message: 'Product berhasil ditambahkan ke cart',
-    data: OBject.values(cart),
+    data: Object.values(cart),
   })
 })
+
+router.get('/api/cart', (req, res) => res.json(cart))
 
 module.export = router
