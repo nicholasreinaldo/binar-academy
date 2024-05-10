@@ -4,6 +4,7 @@ const products = require('../db/products.json')
 let balance = 100000000
 let cart = {}
 
+
 router.post('/api/cart', (req, res) => {
   // Ini adalah API Post untuk nambah product ke cart
   const { productId, quantity } = req.body // destructure sebuah object productId dan quantity untuk mengambil data dari product ke keranjangnya.
