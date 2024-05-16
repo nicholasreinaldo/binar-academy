@@ -8,3 +8,5 @@ const knex = require('knex')({
     database: 'library_db',
   },
 })
+
+module.exports = knex
