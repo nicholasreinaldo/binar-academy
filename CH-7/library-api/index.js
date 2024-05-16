@@ -9,6 +9,12 @@ app.get('/books', async (req, res) => {
   return res.json(books.rows)
 })
 
+app.get("/books/:id", async (req,res) => {
+  const id = req.params.id
+  const books = await knex.raw(`SELECT * FROM books WHERE id = ${id}`)
+  return res.json(books.rows)
+})
+
 app.listen(port, () =>
   console.log(`Server is running at http://localhost:${port}`),
 )
