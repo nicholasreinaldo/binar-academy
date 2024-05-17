@@ -9,10 +9,10 @@ app.get('/books', async (req, res) => {
   return res.json(books.rows)
 })
 
-app.get("/books/:id", async (req,res) => {
+app.get('/books/:id', async (req, res) => {
   const id = req.params.id
   const books = await knex.raw(`SELECT * FROM books WHERE id = ${id}`)
-  return res.json(books.rows)
+  return res.json(books.rows[0])
 })
 
 app.listen(port, () =>
