@@ -7,7 +7,7 @@ function App() {
   const [lastName, setLastName] = useState('')
   const [email, setEmail] = useState('')
 
-  function handleAddUser() {
+  function handleSubmit() {
     const newUser = {
       id: users.length + 1,
       firstName,
@@ -59,7 +59,7 @@ function App() {
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
-      <button className="btn btn-primary" onClick={handleAddUser}>
+      <button className="btn btn-primary" onClick={handleSubmit}>
         Submit
       </button>
 
