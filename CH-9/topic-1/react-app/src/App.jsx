@@ -9,7 +9,6 @@ function App() {
 
   function handleSubmit() {
     const newUser = {
-      id: users.length + 1,
       firstName,
       lastName,
       email,
@@ -77,9 +76,9 @@ function App() {
           </tr>
         </thead>
         <tbody>
-          {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td>
+          {users.map((user, index) => (
+            <tr key={index}>
+              <td>{index + 1}</td>
               <td>{user.firstName}</td>
               <td>{user.lastName}</td>
               <td>{user.email}</td>
