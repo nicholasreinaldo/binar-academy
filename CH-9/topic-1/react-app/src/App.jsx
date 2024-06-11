@@ -32,6 +32,7 @@ function App() {
           className="form-control"
           id="firstName"
           value={firstName}
+          placeholder="Enter your first name"
           onChange={(e) => setFirstName(e.target.value)}
         />
       </div>
@@ -44,6 +45,7 @@ function App() {
           className="form-control"
           id="lastName"
           value={lastName}
+          placeholder="Enter your last name"
           onChange={(e) => setLastName(e.target.value)}
         />
       </div>
@@ -56,6 +58,7 @@ function App() {
           className="form-control"
           id="email"
           value={email}
+          placeholder="Enter your email"
           onChange={(e) => setEmail(e.target.value)}
         />
       </div>
