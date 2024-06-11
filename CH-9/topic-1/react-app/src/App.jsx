@@ -2,19 +2,18 @@ import { useState } from 'react'
 import './App.css'
 
 function App() {
-  const [foods, setFoods] = useState(['Apple', 'Orange', 'Banana'])
+  // const [users, setUsers] = useState([])
 
-  function handleAddFood() {
-    const newFood = document.getElementById('foodInput').value
-    document.getElementById('foodInput').value = ''
-    setFoods((f) => [...f, newFood])
-  }
+  // function handleSubmit() {
+  //   const newUser = document.getElementById('userInput').value
+  //   document.getElementById('foodInput').value = ''
+  //   setFoods((f) => [...f, newUser])
+  // }
 
   return (
     <div>
-      <input type="text" id="foodInput" placeholder="Enter first name" />
-      <button onClick={handleAddFood}>Add Food</button>
-
+      <input type="text" id="" placeholder="Enter first name" />
+      <button>Add Food</button>
       <h2>List of Food</h2>
       <ul>
         {foods.map((food, index) => (
