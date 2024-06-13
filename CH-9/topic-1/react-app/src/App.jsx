@@ -29,15 +29,15 @@ function App() {
       <h1 className="text-center my-4">User Profiles</h1>
       <div className="row">
         {profiles.map((profile, index) => (
-          <div key={index} className="col-md-4 mb-4">
+          <div key={index} className="col-md-3 mb-4">
             <div className="card">
               <img
-                src={profile.picture.large}
+                src={profile.picture.medium}
                 className="card-img-top"
                 alt={`${profile.name.first} ${profile.name.last}`}
               />
               <div className="card-body">
-                <h2 className="card-title">{`${profile.name.first} ${profile.name.last}`}</h2>
+                <h5 className="card-title">{`${profile.name.title} ${profile.name.first} ${profile.name.last}`}</h5>
                 <p className="card-text">Gender: {profile.gender}</p>
                 <p className="card-text">Email: {profile.email}</p>
                 <p className="card-text">
