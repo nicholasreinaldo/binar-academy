@@ -7,7 +7,7 @@ const fetchProfiles = async () => {
     const data = await response.json()
     return data.results
   } catch (error) {
-    console.error('Error fetching the profiles:', error)
+    console.error(error)
     return []
   }
 }
@@ -37,7 +37,7 @@ function App() {
                 alt={`${profile.name.first} ${profile.name.last}`}
               />
               <div className="card-body">
-                <h5 className="card-title">{`${profile.name.first} ${profile.name.last}`}</h5>
+                <h2 className="card-title">{`${profile.name.first} ${profile.name.last}`}</h2>
                 <p className="card-text">Gender: {profile.gender}</p>
                 <p className="card-text">Email: {profile.email}</p>
                 <p className="card-text">
