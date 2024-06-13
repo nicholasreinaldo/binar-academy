@@ -26,7 +26,6 @@ function App() {
 
   return (
     <div className="container">
-      <h1 className="text-center my-4">User Profiles</h1>
       <div className="row">
         {profiles.map((profile, index) => (
           <div key={index} className="col-md-3 mb-4">
