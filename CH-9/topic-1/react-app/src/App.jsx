@@ -32,7 +32,7 @@ function App() {
           <div key={index} className="col-md-4 mb-4">
             <div className="card">
               <img
-                src={profile.picture.medium}
+                src={profile.picture.large}
                 className="card-img-top"
                 alt={`${profile.name.first} ${profile.name.last}`}
               />
