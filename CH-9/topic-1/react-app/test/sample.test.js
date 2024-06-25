@@ -19,15 +19,17 @@ test('adds 1 + 2 to equal 3', () => {
   expect(sum(1, 2)).toBe(3)
 })
 
-test('checking string', () => {
+describe('checking string', () => {
   const name = 'Samuel Anugerah Zega'
-  test('first test', () => {
-    const arrName = name.split()
-    expect(arrName[1]).toBe('Samuel')
+
+  test('first test - checking name parts', () => {
+    const arrName = name.split(' ')
+    expect(arrName[0]).toBe('Samuel')
     expect(arrName[1]).toBe('Anugerah')
-    expect(arrName[1]).toBe('Zega')
+    expect(arrName[2]).toBe('Zega')
   })
-  //   test('second test', () => {
-  //     expect(name.length).toBe(20)
-  //   })
+
+  test('second test - checking name length', () => {
+    expect(name.length).toBe(20)
+  })
 })
