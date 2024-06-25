@@ -27,4 +27,7 @@ test('checking string', () => {
     expect(arrName[1]).toBe('Anugerah')
     expect(arrName[1]).toBe('Zega')
   })
+  test('second test', () => {
+    expect(name.length).toBe(20)
+  })
 })
