@@ -1,9 +1,9 @@
 import { useContext, useEffect, useState } from 'react'
-import ToDoRow from '../components/toDoRow'
+// import ToDoRow from '../components/toDoRow'
 import { useNavigate } from 'react-router-dom'
-import 'react-dropzone-uploader/dist/styles.css'
-import Dropzone from 'react-dropzone-uploader'
-import { Context } from '../context/Provider'
+// import 'react-dropzone-uploader/dist/styles.css'
+// import Dropzone from 'react-dropzone-uploader'
+// import { Context } from '../context/Provider'
 
 function App() {
   const { nama } = useContext(Context)
