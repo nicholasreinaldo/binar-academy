@@ -1,8 +1,8 @@
 import { useContext, useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import 'react-dropzone-uploader/dist/styles.css'
-import Dropzone from 'react-dropzone-uploader'
-import { Context } from '../context/Provider'
+// import 'react-dropzone-uploader/dist/styles.css'
+// import Dropzone from 'react-dropzone-uploader'
+// import { Context } from '../context/Provider'
 
 function Home() {
   const [allData, setallData] = useState([])
